@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote  name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
+  <remote name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
   <default revision="main-kernel-build-2023" remote="aosp" sync-j="4" />
 
-  <superproject name="kernel/superproject" remote="aosp" revision="common-android14-6.1" />
+  <superproject name="kernel/superproject" remote="aosp" revision="common-android14-6.1-2024-09" />
 
-  <project path="build/kernel" name="kernel/build" >
+  <project path="build/kernel" name="kernel/build">
     <linkfile src="kleaf/bazel.sh" dest="tools/bazel" />
     <linkfile src="kleaf/bazel.WORKSPACE" dest="WORKSPACE" />
     <linkfile src="build_test.sh" dest="build/build_test.sh" />
     <linkfile src="config.sh" dest="build/config.sh" />
   </project>
-  <project path="common" name="kernel/common" revision="android14-6.1" />
+  <project path="common" name="kernel/common" revision="android14-6.1-2024-09" upstream="android14-6.1-2024-09" dest-branch="android14-6.1-2024-09" />
   <project path="kernel/tests" name="kernel/tests" />
   <project path="kernel/configs" name="kernel/configs" />
-  <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" revision="android14-6.1" />
+  <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" revision="6282281e9858f54e69552d9658bf25c1b9e1e3b7" upstream="android14-6.1" dest-branch="android14-6.1" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" />
