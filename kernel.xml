@@ -3,7 +3,7 @@
   <remote name="s5e8845" fetch="https://github.com/mst8981" sync-c="true"/>
 
   <!-- S5E8845 kernel -->
-  <project path="common" name="android_kernel_samsung_a55x" revision="A556EXXU7BYDB" remote="s5e8845" clone-depth="1"/>
+  <project path="common" name="android_kernel_samsung_a55x" revision="exynos-6.1-lts-dev" remote="s5e8845" clone-depth="1"/>
 
   <!-- S5E8845 Device -->
   <project path="prebuilts/platform/erd8845" name="device_samsung_s5e8845" revision="main" remote="s5e8845" clone-depth="1"/>
