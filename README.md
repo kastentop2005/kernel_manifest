@@ -11,7 +11,7 @@ Kernel build manifest for Samsung A55x (SM-A556E)
 
 **Initialize the repo**
    ```sh
-   repo init -u https://github.com/mst8981/kernel_manifest.git -b main
+   repo init -u https://github.com/kastentop2005/kernel_manifest.git -b main
    ```
 
 **Sync the repositories**
