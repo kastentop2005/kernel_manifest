@@ -4,7 +4,7 @@
   <remote name="glowingkernel" fetch="https://github.com/exynos1480-dev" sync-c="true"/>
 
   <!-- S5E8845 kernel -->
-  <project path="common" name="upstream" revision="glowingkernel" remote="glowingkernel" clone-depth="1"/>
+  <project path="common" name="glowingkernel" revision="glowingkernel" remote="glowingkernel-next" clone-depth="1"/>
 
   <!-- S5E8845 Device -->
   <project path="prebuilts/platform/erd8845" name="device_samsung_s5e8845" revision="main" remote="s5e8845" clone-depth="1"/>
