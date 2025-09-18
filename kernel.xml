@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="s5e8845" fetch="https://github.com/mst8981" sync-c="true"/>
+
+  <!-- S5E8845 kernel -->
+  <project path="common" name="android_kernel_samsung_a55x" revision="A556EXXU7BYDB" remote="s5e8845" clone-depth="1"/>
+
+  <!-- S5E8845 Device -->
+  <project path="prebuilts/platform/erd8845" name="device_samsung_s5e8845" revision="main" remote="s5e8845" clone-depth="1"/>
+
+  <!-- Kernel Platform -->
+  <project path="kernel_platform/build/kernel" name="kernel_platform_build" revision="main" remote="s5e8845" clone-depth="1">
+    <!-- projects/common -->
+    <linkfile src="projects/common/bazel.WORKSPACE" dest="projects/common/bazel.WORKSPACE" />
+    <linkfile src="projects/common/impl/BUILD.bazel" dest="projects/common/impl/BUILD.bazel" />
+    <linkfile src="projects/common/impl/custom_boot_images.bzl" dest="projects/common/impl/custom_boot_images.bzl" />
+    <linkfile src="projects/common/impl/dtbo.bzl" dest="projects/common/impl/dtbo.bzl" />
+    <linkfile src="projects/common/impl/dtbo_cfg.bzl" dest="projects/common/impl/dtbo_cfg.bzl" />
+    <linkfile src="projects/common/impl/extract_modules.bzl" dest="projects/common/impl/extract_modules.bzl" />
+    <linkfile src="projects/common/impl/vendor_ramdisk.bzl" dest="projects/common/impl/vendor_ramdisk.bzl" />
+
+    <!-- projects/s5e8845 -->
+    <linkfile src="projects/s5e8845/BUILD.bazel" dest="projects/s5e8845/BUILD.bazel" />
+    <linkfile src="projects/s5e8845/build.config.s5e8845.common" dest="projects/s5e8845/build.config.s5e8845.common" />
+    <linkfile src="projects/s5e8845/build.config.s5e8845_userdebug" dest="projects/s5e8845/build.config.s5e8845_userdebug" />
+    <linkfile src="projects/s5e8845/build.config.s5e8845_eng" dest="projects/s5e8845/build.config.s5e8845_eng" />
+    <linkfile src="projects/s5e8845/build.config.s5e8845_user" dest="projects/s5e8845/build.config.s5e8845_user" />
+    <linkfile src="projects/s5e8845/build.config.s5e8845_eng_kasan" dest="projects/s5e8845/build.config.s5e8845_eng_kasan" />
+    <linkfile src="projects/s5e8845/s5e8845.bzl" dest="projects/s5e8845/s5e8845.bzl" />
+    <linkfile src="projects/s5e8845/lego.bzl" dest="projects/s5e8845/lego.bzl" />
+    <linkfile src="projects/s5e8845/s5e8845_a55x_modules.bzl" dest="projects/s5e8845/s5e8845_a55x_modules.bzl" />
+    <linkfile src="projects/s5e8845/s5e8845_model_variant_modules.bzl" dest="projects/s5e8845/s5e8845_model_variant_modules.bzl" />
+    <linkfile src="projects/s5e8845/s5e8845_modules.bzl" dest="projects/s5e8845/s5e8845_modules.bzl" />
+    <linkfile src="projects/s5e8845/system_dlkm.props" dest="projects/s5e8845/system_dlkm.props" />
+    <linkfile src="projects/s5e8845/vendor_dlkm_props" dest="projects/s5e8845/vendor_dlkm_props" />
+
+    <!-- prebuilts/platform/common -->
+    <linkfile src="prebuilts/platform/common/BUILD.bazel" dest="prebuilts/platform/common/BUILD.bazel" />
+    <linkfile src="prebuilts/platform/common/fstab.s5e8845" dest="prebuilts/platform/common/fstab.s5e8845" />
+    <linkfile src="prebuilts/platform/common/fstab.s5e8845.ab" dest="prebuilts/platform/common/fstab.s5e8845.ab" />
+
+    <!-- prebuilts/boot-artifacts/arm64/exynos -->
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/BUILD.bazel" dest="prebuilts/boot-artifacts/arm64/exynos/BUILD.bazel" />
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/file_contexts" dest="prebuilts/boot-artifacts/arm64/exynos/file_contexts" />
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/system_prebuilt_files.tar.gz" dest="prebuilts/boot-artifacts/arm64/exynos/system_prebuilt_files.tar.gz" />
+
+    <!-- user variant -->
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/user/init_boot.img" dest="prebuilts/boot-artifacts/arm64/exynos/user/init_boot.img" />
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/user/ramdisk.cpio.lz4" dest="prebuilts/boot-artifacts/arm64/exynos/user/ramdisk.cpio.lz4" />
+
+    <!-- eng variant -->
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/eng/init_boot.img" dest="prebuilts/boot-artifacts/arm64/exynos/eng/init_boot.img" />
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/eng/ramdisk.cpio.lz4" dest="prebuilts/boot-artifacts/arm64/exynos/eng/ramdisk.cpio.lz4" />
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/eng/ramdisk_for_console.cpio.lz4" dest="prebuilts/boot-artifacts/arm64/exynos/eng/ramdisk_for_console.cpio.lz4" />
+
+    <!-- userdebug variant -->
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/userdebug/init_boot.img" dest="prebuilts/boot-artifacts/arm64/exynos/userdebug/init_boot.img" />
+    <linkfile src="prebuilts/boot-artifacts/arm64/exynos/userdebug/ramdisk.cpio.lz4" dest="prebuilts/boot-artifacts/arm64/exynos/userdebug/ramdisk.cpio.lz4" />
+    
+    <linkfile src="README.md" dest="README.md" />
+  </project>
+
+  <!-- Build script -->
+  <project name="kernel_platform_script" path="kernel_platform/script" revision="main" remote="s5e8845">
+    <linkfile dest="build.sh" src="build.sh" />
+  </project>
+</manifest>
